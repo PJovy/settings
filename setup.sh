@@ -48,7 +48,7 @@ else
     git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 
-sed -ie 's/^plugins=.*/plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting)/g' ~/.zshrc 
+sed -ie 's/^plugins=.*/plugins=(vi-mode git docker zsh-autosuggestions zsh-syntax-highlighting)/g' ~/.zshrc 
 source ~/.zshrc
 echo "###############  Setting up ohmyzsh  ###############"
 
