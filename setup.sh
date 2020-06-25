@@ -11,10 +11,7 @@ apt install zsh vim wget git
 echo "Apt install finished."
 sleep 2
 
-echo "Changing shell to zsh"
-chsh -s /usr/bin/zsh
-echo "Now you are using: $SHELL"
-sleep 2
+
 
 echo "##########Adding git aliases##########"
 git config --global alias.co checkout
@@ -55,6 +52,12 @@ fi
 
 sed -ie 's/^plugins=.*/plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting)/g' ~/.zshrc 
 source ~/.zshrc
+
+
+echo "Changing shell to zsh"
+chsh -s /usr/bin/zsh
+echo "Now you are using: $SHELL"
+sleep 2
 
 echo "####################"
 echo "Setup finished, enjoy it~"
