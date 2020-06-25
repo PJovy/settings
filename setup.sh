@@ -53,7 +53,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 echo "changing default theme to ys:"
-sed -ie 's/^zsh_theme.*/zsh_theme="ys"/g' ~/.zshrc
+sed -ie 's/^ZSH_THEME.*/ZSH_THEME="ys"/g' ~/.zshrc
 
 echo "downloading and enabling oh-my-zsh plugins"
 file1=${zsh_custom:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
