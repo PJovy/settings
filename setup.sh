@@ -3,15 +3,19 @@
 echo "Please run this shell script at sudo."
 echo "Now your are using $(echo $SHELL)"
 
-echo "Update apt...."
-apt update -y
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  echo "########### APT Install #########"
+  apt update -y
+  echo "Installing zsh, vim, wget ,git..."
+  apt install zsh vim wget git 
+  echo "Apt install finished."
+  echo "########## Updating APT ##########"
 
-echo "Installing zsh, vim, wget ,git..."
-apt install zsh vim wget git 
-echo "Apt install finished."
-sleep 2
-
-
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  echo "############# Brew install ############"
+  brew update -y
+  brew install zsh vim wget git
+  echo "########## Brew Install Finished #########"
 
 echo "##########Adding git aliases##########"
 git config --global alias.co checkout
@@ -21,6 +25,7 @@ git config --global alias.st status
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 echo "git aliases setting finished."
 sleep 2
+echo "##########Adding git aliases##########"
 
 
 echo "###############  Setting up ohmyzsh  ###############"
@@ -52,6 +57,7 @@ fi
 
 sed -ie 's/^plugins=.*/plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting)/g' ~/.zshrc 
 source ~/.zshrc
+echo "###############  Setting up ohmyzsh  ###############"
 
 
 echo "Changing shell to zsh"
