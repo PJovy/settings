@@ -3,7 +3,7 @@
 echo "Please run this shell script at sudo."
 echo "Now your are using $(echo $SHELL)"
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+#if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   echo "########### APT Install #########"
   apt update -y
   echo "Installing zsh, vim, wget ,git..."
@@ -11,12 +11,12 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   echo "Apt install finished."
   echo "########## Updating APT ##########"
 
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "############# Brew install ############"
-  brew update -y
-  brew install zsh vim wget git
-  echo "########## Brew Install Finished #########"
-
+#elif [[ "$OSTYPE" == "darwin"* ]]; then
+#  echo "############# Brew install ############"
+#  brew update -y
+#  brew install zsh vim wget git
+#  echo "########## Brew Install Finished #########"
+#
 echo "##########Adding git aliases##########"
 git config --global alias.co checkout
 git config --global alias.br branch
