@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 echo "Please run this shell script at sudo."
 echo "Now your are using $(echo $SHELL)"
@@ -26,9 +26,15 @@ else
   echo "########## apt install finished ##########"
 fi
 
+echo "########## Changing shell ##########"
+chsh -s $(which zsh)
+sleep 1
+echo "######### Using $SHELL now  ###########"
 
+echo "#########  Downloading vim plugin manager Vundle  ###########"
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
+sleep 1
+echo "#########  Vundle downloaded. ###########"
 
 echo "##########  adding git aliases  ##########"
 git config --global alias.co checkout
