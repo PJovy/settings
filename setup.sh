@@ -27,6 +27,8 @@ else
 fi
 
 
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 
 echo "##########  adding git aliases  ##########"
 git config --global alias.co checkout
