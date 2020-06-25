@@ -1,35 +1,32 @@
-#!/bin/bash
+#!/bin/zsh
+# Please run this script by zsh.
 
 echo "Please run this shell script at sudo."
 echo "Now your are using $(echo $SHELL)"
-
-
 echo "##########     Welcome to Jovy's setup script!     ##########"
+echo "##########     Running command:  $(ps -o args= -p "$$")   ##########"
+sleep 2
 
-echo "##########     Your current shell: $SHELL     ##########"
+
+
 
 if [[ $(uname) = "Darwin" ]]; then
   echo "You are using Mac."
   echo "########### brew install #########"
   brew update -y
-  echo "installing zsh, vim, wget ,git..."
-  brew install zsh vim wget git 
+  echo "installing zsh, vim, wget ,git, curl..."
+  brew install zsh vim wget git curl
   echo "brew install finished."
   echo "########## brew install finished ##########"
 else
   echo "You are using Linux"
   echo "########### apt install #########"
   apt update -y
-  echo "installing zsh, vim, wget ,git..."
-  apt install zsh vim wget git 
+  echo "installing zsh, vim, wget ,git, curl..."
+  apt install zsh vim wget git curl
   echo "apt install finished."
   echo "########## apt install finished ##########"
 fi
-
-echo "########## Changing shell ##########"
-chsh -s $(which zsh)
-sleep 1
-echo "######### Using $SHELL now  ###########"
 
 echo "#########  Downloading vim plugin manager Vundle  ###########"
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
