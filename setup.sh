@@ -41,7 +41,7 @@ echo "##########  adding git aliases finished  ##########"
 
 echo "###############  setting up ohmyzsh  ###############"
 echo "now downloading oh-my-zsh framework"
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -o - | zsh
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | zsh && rm install.sh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 echo "changing default theme to ys:"
