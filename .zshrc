@@ -2,7 +2,6 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 
-# AFTERSHIP_API_KEY, local for testing couriers tokens
 
 # Path to your oh-my-zsh installation.
 export ZSH="~/.oh-my-zsh"
