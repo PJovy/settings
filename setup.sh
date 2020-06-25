@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 echo "Please run this shell script at sudo."
 echo "Now your are using $(echo $SHELL)"
