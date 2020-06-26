@@ -14,16 +14,16 @@ if [[ $(uname) = "Darwin" ]]; then
   echo "You are using Mac."
   echo "########### brew install #########"
   brew update -y
-  echo "installing zsh, vim, wget ,git, curl..."
-  brew install zsh vim wget git curl
+  echo "installing zsh, neovim, wget ,git, curl..."
+  brew install zsh neovim wget git curl
   echo "brew install finished."
   echo "########## brew install finished ##########"
 else
   echo "You are using Linux"
   echo "########### apt install #########"
   apt update -y
-  echo "installing zsh, vim, wget ,git, curl..."
-  apt install zsh vim wget git curl
+  echo "installing zsh, neovim, wget ,git, curl..."
+  apt install zsh neovim wget git curl
   echo "apt install finished."
   echo "########## apt install finished ##########"
 fi
