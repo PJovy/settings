@@ -28,10 +28,12 @@ else
   echo "########## apt install finished ##########"
 fi
 
-echo "#########  Downloading vim plugin manager Vundle  ###########"
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-sleep 1
-echo "#########  Vundle downloaded. ###########"
+
+# TODO Need to update plugin manager to vim-plug
+echo "#########  Downloading vim plugin manager vim-plug ###########"
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+echo "#########  vim-plug downloaded. ###########"
 
 echo "##########  adding git aliases  ##########"
 git config --global alias.co checkout

@@ -11,13 +11,15 @@ filetype on          " required
 " set the runtime path to include vim-plug and initialize
 set rtp+=~/.local/share/nvim/site/autoload/plug.vim
 
-call plug#begin("~/.local/share/nvim/site/plugged")
 
+call plug#begin("~/.local/share/nvim/site/plugged")
 " Plugins
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'taigacute/thinkvim'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -37,7 +39,17 @@ Plug 'joshdick/onedark.vim'   " Atom-style dark theme
 " All of your Plugins must be added before the following line
 call plug#end()
 
+" ctrlp setting
 let g:ctrlp_working_path_mode = 0 " make ctrlp work from current dir
+
+" airline-theme setting
+let g:airline_theme='deus'
+
+" startify setting , disallow startify to change dir
+let g:startify_change_to_dir = 0
+
+" sudo to write
+cnoremap w!! w !sudo tee % >/dev/null
 
 filetype plugin indent on
 
@@ -53,8 +65,8 @@ let g:airline_theme='bubblegum'
 "rainbow Plugin Options (luochen1990/rainbow)
 let g:rainbow_active = 1    " 0 if you want to enable it later via :RainbowToggle
 
-" Colour at column 80
-set colorcolumn=80
+" Colour at column 100
+set colorcolumn=100
 
 " --------------------------------
 " Basic stuff
@@ -70,7 +82,7 @@ set smartcase       " ...except when serach query contains a capital letter
 set autoread        " Auto load files if they change on disc
 map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
 map <Leader>y "*y  )
-map <Leader><Leader> :w<CR>
+nnoremap <Leader><Leader> :w<CR>
 inoremap jj <ESC>:w<CR>
 
 " Pasting - indent last pasted
@@ -78,6 +90,13 @@ nnoremap gz '[=']
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><ESC> :noh<cr>
+
+" NerdTree setting
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+
 
 "Cursor
 if exists('$TMUX')
@@ -98,7 +117,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Insert '#' to the head of the line as comment
-map  I#<ESC>
+" map  I#<ESC>
 
 " Simplify using tabs
 nnoremap ˙ gT

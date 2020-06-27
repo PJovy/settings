@@ -109,7 +109,7 @@ set splitright
 "Tab completion
 set wildmenu
 set wildmode=list:longest,list:full
-function! InsertTabWrapper()
+function InsertTabWrapper()
   let col = col('.') - 1
   if !col || getline('.')[col - 1] !~ '\k'
     return "\<tab>"
