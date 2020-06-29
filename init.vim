@@ -14,7 +14,7 @@ set rtp+=~/.local/share/nvim/site/autoload/plug.vim
 
 call plug#begin("~/.local/share/nvim/site/plugged")
 " Plugins
-
+Plug 'michaeljsmith/vim-indent-object'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'taigacute/thinkvim'
@@ -85,6 +85,11 @@ map <Leader>y "*y  )
 nnoremap <Leader><Leader> :w<CR>
 inoremap jj <ESC>:w<CR>
 
+" Make Y yank everything from the cursor to the end of the line. This makes Y
+" act more like C or D because by default, Y yanks the current line (i.e. the
+" same as yy).
+noremap Y y$
+
 " Pasting - indent last pasted
 nnoremap gz '[=']
 
@@ -116,9 +121,6 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Insert '#' to the head of the line as comment
-" map  I#<ESC>
-
 " Simplify using tabs
 nnoremap ˙ gT
 nnoremap ¬ gt
@@ -143,9 +145,9 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
 " Tab size
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 
 " Disable swap files
