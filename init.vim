@@ -7,10 +7,11 @@ set termguicolors
 " --------------------------------
 set nocompatible              " be iMproved, required
 filetype on          " required
-
 " set the runtime path to include vim-plug and initialize
 set rtp+=~/.local/share/nvim/site/autoload/plug.vim
 
+" set yank to use system clipboard
+set clipboard+=unnamed
 
 call plug#begin("~/.local/share/nvim/site/plugged")
 " Plugins
@@ -35,6 +36,7 @@ Plug 'fatih/vim-go' " golang development
 Plug 'jamesroutley/vim-logbook'
 Plug 'sheerun/vim-polyglot'   " syntax highlighting in most languages
 Plug 'joshdick/onedark.vim'   " Atom-style dark theme
+Plug 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call plug#end()
@@ -57,7 +59,7 @@ filetype plugin indent on
 " Pretty things
 " --------------------------------
 syntax on
-colorscheme onedark
+colorscheme gruvbox
 
 " Set Airline bar theme
 let g:airline_theme='bubblegum'
